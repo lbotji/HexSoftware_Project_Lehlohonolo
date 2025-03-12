@@ -3,10 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto&family=Ubuntu&display=swap" 
-rel="stylesheet">
   <link rel="stylesheet" href="src/style.css">
   <title>To Do List</title>
 </head>
@@ -18,23 +14,24 @@ rel="stylesheet">
   </h1>
   </header>
   <main>
-    <div class="form-container">
-    <form id="to-do-list">
-      <input type="text" class="text" placeholder="Add a new to do..." 
-    required 
-    autofocus 
-    autocomplete="off" 
-    />
-    <input type="button" class="button" value="Add" />
-  </form>
- </div>
-    <ul class="todolist">
-      <li>Task1</li>
-      <li>Task2</li>
-      <li>Task3</li>
-      <li>Task4</li>
+    <div class="container">
+     <div class="todo-app">
+      <div class="row">
+        <input type="text" id="input-box" placeholder="Add your text">
+        <button>Add</button>
+      </div>
+      <ul id="list-container">
+        <li class="checked">Task 1</li>
+         <li>Task 2</li>
+          <li>Task 3</li>
+      </ul>
+
+     </div>
+    
       
     </ul>
+    </div>
+    <script src="src/index.js"></script>
   </main>
   <footer>
     This project was coded by
@@ -45,6 +42,6 @@ rel="stylesheet">
     
     
   </footer>
-  </div>
+  
 </body>
 </html>
