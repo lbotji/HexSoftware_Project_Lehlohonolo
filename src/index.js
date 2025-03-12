@@ -1,21 +1,41 @@
-const inputBox = document.querySelector("inputBox");
-const addBtn = document.querySelector("addBtn");
-const todoList = document.querySelector("todoList");
+const inputBox = document.getElementById("inputBox");
+const listContainer = document.querySelector("list-container");
 
-const addTodo = ()=>{
-  const inputText = inputBox.ariaValueMax.trim();
-  if(inputText.length<=0){
-    alert("You must write something in your to do");
-  }
 
-  const li = document.createElement("li");
-  let p = document.createElement("p");
-  p.innerHTML = inputText;
-  li.appendChild(p);
-
-  todoList.appendChild(li);
-  inputBox.value = "";
+function addtask(){
+  if(inputBox.value === ''){
+}
+else{
+  let li = document.createElement("li");
+  li.innerHTML = inputBox.value;
+  listContainer.appendChild(li);
+  let span = document.createElement("span");
+  span.innerHTML = "\u00d7";
+  li.appendChild(span)
 }
 
+inputBox.value = '';
+saveData();
 
-addBtn.addEventListener("click , addTodo")
+}
+
+listContainer.addEventListener("click", function(e){
+  if(e.target.tagName === "LI"){
+    e.target.classList.toggle("checked");
+  }
+  else{
+    if(e,target.tagName === "SPAN"){
+      e.target.parentElement.remove();
+    }
+  }
+}, false);
+
+function saveData(){
+  localStorage.setItem("data", listContainer.innerHTML);
+}
+
+function showTask(){
+  listContainer.innerHTML = localStorage.getItem("data");
+}
+  
+showTask();
